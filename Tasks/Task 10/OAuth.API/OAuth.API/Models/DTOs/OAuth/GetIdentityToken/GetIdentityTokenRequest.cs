@@ -1,4 +1,4 @@
-﻿namespace OAuth.API.Models.DTOs.GetIdentityToken;
+﻿namespace OAuth.API.Models.DTOs.OAuth.GetIdentityToken;
 
 public class GetIdentityTokenRequest
 {

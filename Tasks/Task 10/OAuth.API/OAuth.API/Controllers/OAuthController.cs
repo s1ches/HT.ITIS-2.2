@@ -5,10 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OAuth.API.Data.Entities;
 using OAuth.API.Interfaces;
-using OAuth.API.Models.DTOs.GetIdentityToken;
-using OAuth.API.Models.DTOs.PostGetAccessToken;
-using OAuth.API.Models.DTOs.PostRefreshToken;
-using OAuth.API.Models.GoogleResponseDTOs;
+using OAuth.API.Models.DTOs.OAuth.GetIdentityToken;
+using OAuth.API.Models.DTOs.OAuth.GoogleResponseDTOs;
+using OAuth.API.Models.DTOs.OAuth.PostGetAccessToken;
+using OAuth.API.Models.DTOs.OAuth.PostRefreshToken;
 
 namespace OAuth.API.Controllers;
 
