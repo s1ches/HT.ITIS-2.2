@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace OAuth.API.Models.GoogleResponseDTOs;
+namespace OAuth.API.Models.DTOs.OAuth.GoogleResponseDTOs;
 
 public class GetRefreshTokenDto
 {

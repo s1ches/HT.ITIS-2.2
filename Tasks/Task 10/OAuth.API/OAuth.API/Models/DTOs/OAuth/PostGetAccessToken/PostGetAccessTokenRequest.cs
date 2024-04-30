@@ -1,4 +1,4 @@
-﻿namespace OAuth.API.Models.DTOs.PostGetAccessToken;
+﻿namespace OAuth.API.Models.DTOs.OAuth.PostGetAccessToken;
 
 public class PostGetAccessTokenRequest
 {

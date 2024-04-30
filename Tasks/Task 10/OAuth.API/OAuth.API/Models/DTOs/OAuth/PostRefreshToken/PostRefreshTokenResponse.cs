@@ -1,4 +1,4 @@
-﻿namespace OAuth.API.Models.DTOs.PostRefreshToken;
+﻿namespace OAuth.API.Models.DTOs.OAuth.PostRefreshToken;
 
 public class PostRefreshTokenResponse
 {
