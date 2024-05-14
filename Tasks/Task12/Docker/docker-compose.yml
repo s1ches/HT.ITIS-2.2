@@ -1,0 +1,23 @@
+﻿services:
+  docker.ui:
+    image: docker.ui
+    build:
+      context: Docker.UI
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+  sql-server:
+    image: mcr.microsoft.com/mssql/server:latest
+    container_name: my-sql-server-container
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "YourStrong!Passw0rd"
+  docker.api:
+    build:
+      context: .
+      dockerfile: Docker.API/Dockerfile
+    ports:
+      - "2323:8080"
+      - "2424:8081"
