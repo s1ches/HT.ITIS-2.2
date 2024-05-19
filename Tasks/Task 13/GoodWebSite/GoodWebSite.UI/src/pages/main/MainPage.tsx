@@ -1,7 +1,7 @@
 // @ts-ignore
 import React, {useContext, useState} from 'react';
 import {sendGetSecretRequest} from "../../axios/secretRequests.ts";
-import {getUserName} from "../../functions/getUserClaims.ts";
+import {getUserName} from "../../services/userClaimsManager.ts";
 
 const MainPage = () => {
     const [secret, setSecret] = useState('');

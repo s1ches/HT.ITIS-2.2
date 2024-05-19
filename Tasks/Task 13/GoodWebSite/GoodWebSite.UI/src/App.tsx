@@ -7,7 +7,7 @@ import LoginPage from "./pages/login/LoginPage.tsx";
 import MainPage from "./pages/main/MainPage.tsx";
 import {observer} from "mobx-react-lite";
 import {UserContext} from "./main.tsx";
-import {isAccessTokenExpired} from "./functions/accessTokenManager.ts";
+import {isAccessTokenExpired} from "./services/accessTokenManager.ts";
 import {logout} from "./functions/logout.ts";
 
 export const App = observer((() => {

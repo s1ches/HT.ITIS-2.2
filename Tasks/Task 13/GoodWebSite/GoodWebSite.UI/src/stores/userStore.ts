@@ -1,4 +1,4 @@
-import {isAccessTokenExpired} from "../functions/accessTokenManager.ts";
+import {isAccessTokenExpired} from "../services/accessTokenManager.ts";
 import {makeAutoObservable} from "mobx";
 
 export class UserStore{

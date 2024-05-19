@@ -1,4 +1,4 @@
-import {getUserClaims} from "./getUserClaims.ts";
+import {getUserClaims} from "./userClaimsManager.ts";
 import {accessTokenCookieName} from "../common/cookiesNames.ts";
 import Cookies from "js-cookie";
 
