@@ -12,6 +12,6 @@ public class SecretController : ControllerBase
     [HttpGet("GetSecret")]
     public GetSecretResponse GetSecret() => new()
     {
-        SecretMessage = "Follow link to see the amazing secret of all world: https://ibb.co/hZQghy0"
+        SecretMessage = "https://ibb.co/hZQghy0"
     };
 }

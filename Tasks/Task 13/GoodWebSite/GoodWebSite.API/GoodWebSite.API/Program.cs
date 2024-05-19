@@ -12,11 +12,11 @@ var configuration = builder.Configuration;
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<IAppDbContext, AppDbContext>(opt =>
     opt.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddSwagger(configuration);
 builder.Services.AddAuth(configuration);
 
 builder.Services.AddServices();
@@ -25,9 +25,10 @@ builder.Services.AddMiddlewares(configuration);
 builder.Services.AddCors(opt
     => opt.AddPolicy("AllowAll", policy =>
     {
-        policy.AllowAnyOrigin()
-            .AllowAnyMethod()
-            .AllowAnyHeader();
+        policy.AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials()
+            .WithOrigins(configuration.GetSection("AllowedOrigins").Get<string[]>()!);
     })
 );
 
@@ -42,11 +43,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseMiddleware<AuthMiddlewareHelper>();
 
+app.UseMiddleware<ExceptionMiddleware>();
+
 app.UseCors("AllowAll");
 
 app.UseHttpsRedirection();
 
-app.UseMiddleware<ExceptionMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 

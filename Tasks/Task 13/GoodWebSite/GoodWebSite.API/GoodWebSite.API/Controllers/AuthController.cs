@@ -29,7 +29,7 @@ public class AuthController(
         var canSignIn = signInManager.TryPasswordSignIn(user, request.Password, request.IsPersistent);
 
         if (!canSignIn)
-            throw new BadRequestException("Wrong password");
+            throw new BadRequestException("Wrong password"); 
     }
 
     [HttpPost("Register")]

@@ -1,4 +1,5 @@
-﻿using GoodWebSite.DAL.Entities;
+﻿using GoodWebSite.Constants;
+using GoodWebSite.DAL.Entities;
 using GoodWebSite.Interfaces;
 using Microsoft.AspNetCore.Identity;
 
@@ -19,19 +20,14 @@ public class SignInManager(IPasswordHasher<User> passwordHasher,
             return false;
 
         var accessToken = authTokenProvider.GenerateAccessToken(user);
-        var cookieOptions = new CookieOptions
-        {
-            Secure = true,
-            HttpOnly = true,
-            SameSite = SameSiteMode.Unspecified
-        };
+        var cookieOptions = CookiesConfigOptions.BaseCookiesOptions;
         
         if(isPersistent)
-            cookieOptions.Expires = DateTimeOffset.UtcNow.AddDays(10);
+            cookieOptions.Expires = DateTimeOffset.UtcNow.AddDays(CookiesConfigOptions.CookiesLifetimeInDays);
         
         contextAccessor.HttpContext?.Response
             .Cookies.Append(configuration["JWT:CookieName"]!, accessToken, cookieOptions);
-
+        
         return true;
     }
 }
