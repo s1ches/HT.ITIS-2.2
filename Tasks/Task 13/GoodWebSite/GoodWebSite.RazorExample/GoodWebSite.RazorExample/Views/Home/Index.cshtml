@@ -1,0 +1,14 @@
+﻿@using System.Security.Claims
+@model GoodWebSite.RazorExample.Models.Home.IndexViewModel
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "_Layout";
+}
+
+<h1>
+    Hello, @User.Claims.First(x => x.Type == ClaimTypes.Name).Value
+</h1>
+<div id="secret">
+    <a href="@Model.SecretMessage">Get Secret</a>
+</div>

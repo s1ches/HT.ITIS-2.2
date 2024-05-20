@@ -1,0 +1,7 @@
+export class GetSecretDto {
+    message: string;
+
+    constructor(message: string) {
+        this.message = message;
+    }
+}
