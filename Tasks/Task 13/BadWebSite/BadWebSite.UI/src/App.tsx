@@ -15,10 +15,10 @@ const App = () => {
     return (
       <div>
           <div>
-              <h1>🤡Нажми🤡на🤡кнопку🤡ниже🤡и🤡получи🤡выигрыш🤡в🤡500000🤡млн🤡рублей🤡</h1>
-              <button onClick={getUserSecret}>500000млн</button>
+              <h1>Нажми на кнопку ниже и получи выигрыш в 500000 млн рублей</h1>
+              <button onClick={getUserSecret}>🤡</button>
           </div>
-          {userSecret && <h1>LOX: YOUR SECRET {userSecret}</h1>}
+          {userSecret && <h1>ЛОХ: YOUR SECRET {userSecret}</h1>}
       </div>
     );
 }

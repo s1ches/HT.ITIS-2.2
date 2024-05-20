@@ -16,5 +16,7 @@ export const isAccessTokenExpired: () => boolean = () => {
 
     let tokenExpiryTime = new Date(Number(userClaims.exp) * 1000);
 
+    console.log(tokenExpiryTime < new Date());
+
     return tokenExpiryTime < new Date();
 }
