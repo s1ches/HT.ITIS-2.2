@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <form id="prizeForm" action="https://localhost:44343/Home/Index" target="responseFrame">
+        <h1>You WIN 50000</h1>
+        <button type="submit">Get Prize</button>
+    </form>
+    <iframe id="responseFrame" name="responseFrame"></iframe>
+    <script>
+        document.getElementById('prizeForm').addEventListener('submit', function() {
+            document.getElementById('responseFrame').style.display = 'block';
+        });
+    </script>
+</div>

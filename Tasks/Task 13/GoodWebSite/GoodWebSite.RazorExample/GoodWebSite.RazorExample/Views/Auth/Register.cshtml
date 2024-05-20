@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model GoodWebSite.RazorExample.Models.Auth.RegisterViewModel
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "_Layout";
+}
+
+<form asp-action="Register" asp-controller="Auth" method="post">
+    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+        <label>User Name</label><br/><br/>
+        <span asp-validation-for="UserName"></span>
+        <input type="text" asp-for="UserName"/>
+    </div>
+    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+        <label>Password</label><br/><br/>
+        <span asp-validation-for="Password"></span>
+        <input type="password" asp-for="Password"/>
+    </div>
+    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+        <button class="btn-primary" type="submit">Register</button>
+    </div>
+</form>
